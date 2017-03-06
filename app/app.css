@@ -1,0 +1,22 @@
+html { font-family: 'Open Sans';}
+h1,h2,h3 { font-family:'Open Sans Condensed';}
+.grey { color: #aaa;}
+.green { color: #4CAF50;}
+.text-center { text-align: center;}
+.disclaimer {
+  margin-top: 20px;
+  max-width: 300px;
+  min-width: 300px;
+  color:#ccc;
+  font-size: .7em;
+  text-align: left;
+}
+.disclaimer p {
+  margin: 5px 10px 0px 10px;
+}
+.disclaimer p.signo {
+  text-align: right;
+  margin-top: 15px;
+  font-size: .9em;
+  color: #aaa;
+}

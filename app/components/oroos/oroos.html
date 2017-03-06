@@ -1,0 +1,7 @@
+<div flex layout-fill layout-align="center center" layout="column">
+  <h1><span class="green">{{vm.q}}</span><span class="grey">. kérdés</span></h1>
+  <md-progress-linear style="height:20px; max-width:300px;" class="md-accent md-hue-2" md-mode="determinate" value="{{vm.q/20*100}}"></md-progress-linear>
+  <md-button ng-hide="vm.q>19" class="md-fab md-accent md-hue-2" aria-label="Start Survey" ng-click="vm.next();">
+    <md-icon class="material-icons">navigate_next</md-icon>
+  </md-button>
+</div>
