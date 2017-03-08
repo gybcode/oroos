@@ -11,7 +11,7 @@
     vm.start = start;
 
     function start(){
-      $state.go('dashboard.oroos', {"q":1})
+      $state.go('dashboard.oroos', {"q":1});
     }
 
     activate();

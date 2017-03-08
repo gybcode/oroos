@@ -1,10 +1,22 @@
-<div flex layout-fill layout-align="center center" layout="column">
+<div flex="" layout-fill="" layout-align="center center" layout="column" ng-show="vm.q==25">
+  <h1><span md-colors="{color:'accent-500'}">Köszönjük, hogy válaszolt kérdéseinkre!</h1>
+   <md-button class="md-fab md-accent md-hue-2" aria-label="Start Survey" ng-click="vm.st()">
+    <md-icon class="material-icons">refresh</md-icon>
+  </md-button>
+</div>
+<div flex layout-fill layout-align="center center" layout="column" ng-show="vm.q<25">
   <h1><span md-colors="{color:'accent-500'}">{{vm.questions[vm.q-1].title}}</span><span class="grey"> kérdés</span></h1>
   <div style="max-width:600px;font-size:.8em;" ng-show="vm.q < 7">
     <h2> {{vm.aid[0]}} </h2>
   </div>
-  <div style="max-width:600px;font-size:.8em;" ng-show="vm.q < 13 && vm.q > 6">
+  <div style="max-width:600px;font-size:.8em;" ng-show="vm.q < 25 && vm.q > 6 && vm.questions[vm.q-1].title.indexOf('A') == -1 && vm.questions[vm.q-1].title.indexOf('B') == -1">
     <h2> {{vm.aid[1]}} </h2>
+  </div>
+  <div style="max-width:600px;font-size:.8em;" ng-show="vm.q < 25 && vm.q > 6 && vm.questions[vm.q-1].title.indexOf('A') > -1">
+    <h2> {{vm.aid[2]}} </h2>
+  </div>
+  <div style="max-width:600px;font-size:.8em;" ng-show="vm.q < 25 && vm.q > 6 && vm.questions[vm.q-1].title.indexOf('B') > -1">
+    <h2> {{vm.aid[3]}} </h2>
   </div>
   <md-progress-linear ng-hide="vm.q>19" style="height:20px;max-width: 800px;" class="md-accent md-hue-2" md-mode="determinate"
     value="{{vm.q/19*100}}"></md-progress-linear>
@@ -82,7 +94,7 @@
   </md-content>
   <!-- FOR STATS -->
 
-  <md-button ng-hide="vm.q>19" ng-disabled="!vm.rating" class="md-fab md-accent md-hue-2" aria-label="Start Survey" ng-click="vm.next();">
+  <md-button ng-hide="vm.q>24" ng-disabled="!vm.rating" class="md-fab md-accent md-hue-2" aria-label="Start Survey" ng-click="vm.next();">
     <md-icon class="material-icons">navigate_next</md-icon>
   </md-button>
 </div>

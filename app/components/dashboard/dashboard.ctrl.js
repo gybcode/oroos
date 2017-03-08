@@ -9,7 +9,6 @@
   function DashboardController($state) {
     var vm = this;
 
-
     activate();
 
     ////////////////
